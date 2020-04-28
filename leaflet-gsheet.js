@@ -31,8 +31,8 @@ var panelContent = {
   id: panelID,
   tab: '<i class="fa fa-bars active"></i>',
   // pane: '<p id="sidebar-content"></p><a href="https://arahmandc.github.io/dump/img/1498800820242.jpg" target="_blank"><img src="https://arahmandc.github.io/dump/img/1498800820242.jpg" width="300px"></a> <p>details:</p><p id="sidebar-contentt"></p>',
-  pane: '<p id="sidebar-content"></p><a href="https://arahmandc.github.io/dump/img/cs.jpg" target="_blank"><img src="https://arahmandc.github.io/dump/img/cs.jpg" width="200px"></a> <p><h4>details:</h4></p><p id="sidebar-contentt"></p>',
-  title: '<h2 id="sidebar-title">No state selected</h2>',
+  pane: '<p id="sidebar-content"></p><p id="sidebar-image"><p><h4>details:</h4></p><p id="sidebar-contentt"></p>',
+  title: '<h2 id="sidebar-title">POI not selected</h2>',
 
 };
 sidebar.addPanel(panelContent);
@@ -66,6 +66,7 @@ function addPoints(data) {
         location: data[row].location_name,
         category: data[row].category,
         level: data[row].level,
+        imagepath: data[row].Image2,
       }
     };
     marker.on({
@@ -74,6 +75,7 @@ function addPoints(data) {
         document.getElementById('sidebar-title').innerHTML = e.target.feature.properties.location;
         document.getElementById('sidebar-content').innerHTML = e.target.feature.properties.category;
         document.getElementById('sidebar-contentt').innerHTML = e.target.feature.properties.level;
+        document.getElementById('sidebar-image').innerHTML = e.target.feature.properties.imagepath;
         sidebar.open(panelID);
       }
     });

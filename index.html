@@ -45,14 +45,14 @@ hr {
 } 
 </style>
 </head>
-<body>        
+<body oncontextmenu="return false">        
     <div>
         <div><h2 style="padding-left: 250px;">Geo Based Data Collection Platform</h2></div>
         <ul>
         <li style="padding-left: 900px"><a class="active" href="index.html">Home</a></li>
         <li><a href="table.html">Data Table</a></li>
         <li><a href="map.html">Map</a></li>
-        <li><a href="other.html">Others</a></li>
+<!--         <li><a href="other.html">Others</a></li> -->
         </ul>
     </div>
 
@@ -82,6 +82,51 @@ hr {
         </p>
         <hr>
     </div>
+
+    <script language="JavaScript">
+  /**
+    * Disable right-click of mouse, F12 key, and save key combinations on page
+    * By Arthur Gareginyan (https://www.arthurgareginyan.com)
+    * For full source code, visit https://mycyberuniverse.com
+    */
+  window.onload = function() {
+    document.addEventListener("contextmenu", function(e){
+      e.preventDefault();
+    }, false);
+    document.addEventListener("keydown", function(e) {
+    //document.onkeydown = function(e) {
+      // "I" key
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+        disabledEvent(e);
+      }
+      // "J" key
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+        disabledEvent(e);
+      }
+      // "S" key + macOS
+      if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+        disabledEvent(e);
+      }
+      // "U" key
+      if (e.ctrlKey && e.keyCode == 85) {
+        disabledEvent(e);
+      }
+      // "F12" key
+      if (event.keyCode == 123) {
+        disabledEvent(e);
+      }
+    }, false);
+    function disabledEvent(e){
+      if (e.stopPropagation){
+        e.stopPropagation();
+      } else if (window.event){
+        window.event.cancelBubble = true;
+      }
+      e.preventDefault();
+      return false;
+    }
+  };
+</script>
     
 </body>
 </html>
