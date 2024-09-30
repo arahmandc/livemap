@@ -1,6 +1,6 @@
 function init() {
 
-	var pointsURL = 'https://docs.google.com/spreadsheets/d/1EDXmzu9H6sd6Hn1Pf8Tvd9jLtr7HaHNWAdxOTsSylhM/edit?usp=sharing';
+	var pointsURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTRl3QCJ0KrSJcMfnrGlFqjGl5W60Tej2C7tj7maDfyWoxDnP2Eg4clv8QTHjHVXUzCM2XB1J--ENHR/pub?output=csv';
 
 	Tabletop.init( { key: pointsURL,
     callback: addPoints,
